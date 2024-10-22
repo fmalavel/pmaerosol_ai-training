@@ -1,0 +1,21 @@
+name: eumetnet
+channels:
+- conda-forge
+dependencies:
+- python=3.8
+- jupyterlab
+- ipywidgets
+- ipykernel
+- matplotlib
+- jupyter
+- cartopy
+- eccodes
+- netcdf4
+- scikit-learn
+- pytorch
+- pyyaml
+- keras
+- tensorflow
+- jupytext
+- iris
+- mo_pack

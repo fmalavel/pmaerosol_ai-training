@@ -1,0 +1,20 @@
+#!/bin/bash -l
+#SBATCH --mem=100G
+#SBATCH --ntasks=1
+#SBATCH --partition=rhel7
+#SBATCH --time=360
+#SBATCH --export=NONE
+#SBATCH --output=PM_Neural_Network_training.out
+#SBATCH --qos=long
+
+conda activate eumetnet
+
+echo -e "Launching python PM_Neural_Network_training.sub on `date`\n"
+
+python PM_Neural_Network_training.py
+
+echo -e "\nFinished on `date`"
+
+mkdir -p logs
+mv PM_Neural_Network_training.out logs/PM_NN_training_log_`date '+%Y-%m-%d_at_%H:%M:%S'`.out
+mv loss_pm2p5.png logs/loss_pm2p5_`da  te '+%Y-%m-%d_at_%H:%M:%S'`.png
